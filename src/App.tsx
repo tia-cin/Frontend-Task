@@ -34,9 +34,18 @@ export const App: React.FC = () => {
         <Routes>
           <Route
             path="/"
-            element={<Search setInput={setInput} handleSubmit={handleSubmit} />}
+            element={
+              <Search
+                setInput={setInput}
+                handleSubmit={handleSubmit}
+                input={input}
+              />
+            }
           />
-          <Route path="/history" element={<History />} />
+          <Route
+            path="/history"
+            element={<History history={history} setInput={setInput} />}
+          />
         </Routes>
       </BrowserRouter>
     </div>
