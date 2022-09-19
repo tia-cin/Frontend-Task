@@ -9,8 +9,8 @@ interface HistoryProps {
 export const History: React.FC<HistoryProps> = ({ history, setInput }) => {
   return (
     <div>
-      {history.map((h) => (
-        <Link to="/">
+      {history.map((h: string, i: number) => (
+        <Link to="/" key={i}>
           <button onClick={(e) => setInput(h)}>{h}</button>
         </Link>
       ))}

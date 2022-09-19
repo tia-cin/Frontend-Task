@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
+import { UserInfo } from "./UserInfo";
 
 interface SearchProps {
   setInput: React.Dispatch<React.SetStateAction<string>>;
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   input: string;
+  current: any;
 }
 
 export const Search: React.FC<SearchProps> = ({
   setInput,
   handleSubmit,
   input,
+  current,
 }) => {
   return (
     <div>
@@ -25,6 +28,7 @@ export const Search: React.FC<SearchProps> = ({
           <input type="submit" />
         </form>
       </div>
+      <div>{current && <UserInfo user={current} />}</div>
     </div>
   );
 };

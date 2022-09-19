@@ -10,6 +10,7 @@ import { Navbar } from "./components/Navbar";
 export const App: React.FC = () => {
   const [history, setHistory] = useState<Array<string>>([]);
   const [input, setInput] = useState("");
+  const [current, setCurrent] = useState();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -20,12 +21,8 @@ export const App: React.FC = () => {
   const searchUser = async (username: string) => {
     const request = await axios.get(`https://api.github.com/users/${username}`);
     const response = (await request.status) === 200 ? request.data : null;
-    console.log(response);
+    setCurrent(response);
   };
-
-  console.log("====================================");
-  console.log(history);
-  console.log("====================================");
 
   return (
     <div className="App">
@@ -36,6 +33,7 @@ export const App: React.FC = () => {
             path="/"
             element={
               <Search
+                current={current}
                 setInput={setInput}
                 handleSubmit={handleSubmit}
                 input={input}
