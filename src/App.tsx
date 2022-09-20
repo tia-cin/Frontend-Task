@@ -6,6 +6,7 @@ import axios from "axios";
 import { History } from "./components/History";
 import { Search } from "./components/Search";
 import { Navbar } from "./components/Navbar";
+import { Home } from "./components/Home";
 
 export const App: React.FC = () => {
   const [history, setHistory] = useState<string[]>([]);
@@ -18,9 +19,6 @@ export const App: React.FC = () => {
     setLoading(false);
     searchUser(value);
     setHistory([...history, input]);
-    console.log("====================================");
-    console.log(input);
-    console.log("====================================");
   };
 
   const searchUser = async (username: string) => {
@@ -36,8 +34,9 @@ export const App: React.FC = () => {
       <BrowserRouter>
         <Navbar />
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route
-            path="/"
+            path="/search"
             element={
               <Search
                 loading={loading}

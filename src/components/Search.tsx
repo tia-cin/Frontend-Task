@@ -17,14 +17,6 @@ export const Search: React.FC<SearchProps> = ({
   current,
   loading,
 }) => {
-  const location = useLocation().search;
-
-  const cleanLocation = (value: string) => value.split("=")[1];
-
-  // useEffect(() => {
-  //   handleSubmit(cleanLocation(input));
-  // }, [location]);
-
   return (
     <div>
       <div>
@@ -37,6 +29,7 @@ export const Search: React.FC<SearchProps> = ({
             onChange={(e) => setInput(e.target.value)}
           />
           <input type="submit" />
+          <small>Please click or "enter" </small>
         </form>
       </div>
       <div>

@@ -15,11 +15,9 @@ export const History: React.FC<HistoryProps> = ({
   return (
     <div>
       {history.map((h: string, i: number) => (
-        <Link to="/" key={i}>
+        <Link to="/search" key={i}>
           <form onSubmit={(e) => handleSubmit(e, h)}>
-            <button type="submit" onClick={(e) => setInput(h)}>
-              {h}
-            </button>
+            <input type="submit" value={h} onClick={(e) => setInput(h)} />
           </form>
         </Link>
       ))}
