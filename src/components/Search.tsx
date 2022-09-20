@@ -18,7 +18,7 @@ export const Search: React.FC<SearchProps> = ({
   loading,
 }) => {
   return (
-    <div className="page-container search-container">
+    <div className="search-container">
       <div>
         <form onSubmit={(e) => handleSubmit(e, input)}>
           <input

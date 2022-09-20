@@ -33,31 +33,33 @@ export const App: React.FC = () => {
     <div className="App">
       <BrowserRouter>
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/search"
-            element={
-              <Search
-                loading={loading}
-                current={current}
-                setInput={setInput}
-                handleSubmit={handleSubmit}
-                input={input}
-              />
-            }
-          />
-          <Route
-            path="/history"
-            element={
-              <History
-                history={history}
-                setInput={setInput}
-                handleSubmit={handleSubmit}
-              />
-            }
-          />
-        </Routes>
+        <div className="page-container">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/search"
+              element={
+                <Search
+                  loading={loading}
+                  current={current}
+                  setInput={setInput}
+                  handleSubmit={handleSubmit}
+                  input={input}
+                />
+              }
+            />
+            <Route
+              path="/history"
+              element={
+                <History
+                  history={history}
+                  setInput={setInput}
+                  handleSubmit={handleSubmit}
+                />
+              }
+            />
+          </Routes>
+        </div>
       </BrowserRouter>
     </div>
   );

@@ -14,7 +14,7 @@ export const History: React.FC<HistoryProps> = ({
   handleSubmit,
 }) => {
   return (
-    <div className="page-container history-container">
+    <div className="history-container">
       <h2>Recent searches</h2>
       <div>
         {history.map((h: string, i: number) => (

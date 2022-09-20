@@ -3,7 +3,7 @@ import "./style/Home.css";
 
 export const Home: React.FC = () => {
   return (
-    <main className="page-container home-container">
+    <main className="home-container">
       <h1>
         Frontend Task <small>by Cintia Arce</small>
       </h1>
