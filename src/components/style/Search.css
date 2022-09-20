@@ -1,0 +1,30 @@
+.search-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.search-container form {
+    display: grid;
+    grid-template-columns: .8fr .2fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "text button"
+    "small small"
+    ;
+    gap: 1em 0;
+}
+
+.search-container form input:first-child {
+    grid-area: text;
+}
+
+.search-container form input:last-child {
+    grid-area: button;
+}
+
+.search-container form small {
+    grid-area: small;
+}

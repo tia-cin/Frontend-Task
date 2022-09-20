@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import "./style/Search.css";
 import { UserInfo } from "./UserInfo";
 
 interface SearchProps {
@@ -18,13 +18,12 @@ export const Search: React.FC<SearchProps> = ({
   loading,
 }) => {
   return (
-    <div>
+    <div className="search-container">
       <div>
         <form onSubmit={(e) => handleSubmit(e, input)}>
-          <label>Username</label>
           <input
             type="text"
-            placeholder="Joe Doe"
+            placeholder="Search"
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />

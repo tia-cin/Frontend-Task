@@ -1,0 +1,20 @@
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "user-avatar user-info"
+    "user-repos user-repos";
+}
+
+.user-info {
+    grid-area: user-info;
+}
+
+.user-avatar {
+    grid-area: user-avatar;
+}
+
+.user-repos {
+    grid-area: user-repos;
+}

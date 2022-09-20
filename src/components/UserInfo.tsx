@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./style/UserInfo.css";
 import axios from "axios";
 
 interface UserInfoProps {
@@ -17,15 +18,15 @@ export const UserInfo: React.FC<UserInfoProps> = ({ user }) => {
   getUserRepos();
 
   return (
-    <div>
-      <div>
+    <section>
+      <div className="user-info">
         <h2>{user.name}</h2>
         <p>{user.bio}</p>
       </div>
-      <div>
-        <img src={user.avatar_url} alt={user.login} />
+      <div className="user-avatar">
+        <img src={user.avatar_url} width="50" alt={user.login} />
       </div>
-      <div>
+      <div className="user-repos">
         {repos.length > 1 &&
           repos.map((r: any, i: number) => (
             <div key={i}>
@@ -35,6 +36,6 @@ export const UserInfo: React.FC<UserInfoProps> = ({ user }) => {
             </div>
           ))}
       </div>
-    </div>
+    </section>
   );
 };
