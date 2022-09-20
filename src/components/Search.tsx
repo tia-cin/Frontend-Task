@@ -34,7 +34,7 @@ export const Search: React.FC<SearchProps> = ({
         {loading ? (
           <UserInfo user={current} />
         ) : loading !== undefined ? (
-          <h3>Loading...</h3>
+          <span className="loader"></span>
         ) : null}
       </div>
     </div>
