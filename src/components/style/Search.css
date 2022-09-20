@@ -1,8 +1,6 @@
 .search-container {
     display: grid;
     grid-template-rows: .1fr .9fr;
-    margin: 0 5em;
-    margin-left: 15em;
 }
 
 .search-container > div {

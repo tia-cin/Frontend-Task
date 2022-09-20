@@ -1,0 +1,29 @@
+.history-container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--medium);
+    padding: 2em;
+    border-radius: 2em;
+    width: 45em;
+}
+
+.history-container > div {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.history-container a {
+    width: 100%;
+    border-bottom: 1px solid var(--black);
+}
+
+.history-container button {
+    border: none;
+    margin: .5em 0;
+    background-color: transparent;
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--black);
+    opacity: .9;
+    cursor: pointer;
+}

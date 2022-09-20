@@ -3,7 +3,7 @@ import "./style/Home.css";
 
 export const Home: React.FC = () => {
   return (
-    <main>
+    <main className="page-container home-container">
       <h1>Frontend Task</h1>
       <p>
         On the "search" page you can search any user from github. <br />
