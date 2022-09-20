@@ -1,8 +1,5 @@
 .App {
   display: flex;
   flex-direction: row;
-}
-
-.App:not(nav) {
-  height: 90vh;
+  height: 100%;
 }

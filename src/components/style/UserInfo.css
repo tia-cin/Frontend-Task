@@ -1,7 +1,7 @@
 section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: .3fr .7fr;
+    grid-template-rows: .2fr .8fr;
     grid-template-areas: 
     "user-avatar user-info"
     "user-repos user-repos";
@@ -9,6 +9,9 @@ section {
 
 .user-info {
     grid-area: user-info;
+    background-color: var(--medium);
+    border-radius: 2em;
+    padding: 2em;
 }
 
 .user-avatar {
@@ -17,4 +20,45 @@ section {
 
 .user-repos {
     grid-area: user-repos;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em 5em;
+    margin: 1.5em;
+}
+
+.user-avatar img {
+    border-radius: 5em;
+    width: 10em;
+    margin-left: 4em;
+}
+
+.user-info h2 small {
+    font-weight: 100;
+    margin-left: .5em;
+    font-size: small;
+}
+
+.user-repos div {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .5em 0;
+    background-color: var(--medium);
+    padding: 1.5em;
+    border-radius: 2em;
+}
+
+.user-repos div p {
+    min-height: 1.4em;
+}
+
+.user-repos div a {
+    background-color: var(--strong);
+    text-align: center;
+    padding: .3em;
+    border-radius: 2em;
+    color: var(--black);
+}
+
+.user-repos div h5 {
+    font-size: 1em;
 }

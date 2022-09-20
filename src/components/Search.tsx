@@ -27,8 +27,7 @@ export const Search: React.FC<SearchProps> = ({
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
-          <input type="submit" />
-          <small>Please click or "enter" </small>
+          <button type="submit"></button>
         </form>
       </div>
       <div>

@@ -1,30 +1,47 @@
 .search-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
+    display: grid;
+    grid-template-rows: .1fr .9fr;
+    margin: 0 5em;
+    margin-left: 15em;
+}
+
+.search-container > div {
+    margin: 2em 0;
+}
+
+.search-container > div:first-child {
+    margin: 0 30em;
 }
 
 .search-container form {
+    margin-top: 5em;
     display: grid;
     grid-template-columns: .8fr .2fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: 
-    "text button"
-    "small small"
-    ;
+    grid-template-areas: "text button";
     gap: 1em 0;
+    border-radius: 2em;
+    background-color: var(--white);
+    padding: .5em;
 }
 
-.search-container form input:first-child {
+.search-container form input {
     grid-area: text;
+    border: none;
+    padding: .5em;
+    border-radius: 2em;
+    margin-right: .5em;
+    background-color: var(--white);
 }
 
-.search-container form input:last-child {
+.search-container form button {
     grid-area: button;
-}
-
-.search-container form small {
-    grid-area: small;
+    border: none;
+    overflow: hidden;
+    width: 40px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid transparent;
+    border-radius: 0em 2em 2em 0em;
+    background: var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+    cursor: pointer;
 }

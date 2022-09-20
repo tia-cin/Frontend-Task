@@ -6,9 +6,15 @@
   text-decoration: none;
 }
 
+body {
+  background-color: var(--light);
+}
+
 
 :root {
   --strong: #F85F41;
   --medium: #FFCC99;
   --light: #FDE6B6;
+  --white: #f7f7f7;
+  --black: #191919;
 }
