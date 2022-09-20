@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
@@ -8,20 +8,27 @@ import { Search } from "./components/Search";
 import { Navbar } from "./components/Navbar";
 
 export const App: React.FC = () => {
-  const [history, setHistory] = useState<Array<string>>([]);
-  const [input, setInput] = useState("");
-  const [current, setCurrent] = useState();
+  const [history, setHistory] = useState<string[]>([]);
+  const [input, setInput] = useState<string>("");
+  const [current, setCurrent] = useState<any>();
+  const [loading, setLoading] = useState<boolean>();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>, value: string) => {
     e.preventDefault();
-    searchUser(input);
+    setLoading(false);
+    searchUser(value);
     setHistory([...history, input]);
+    console.log("====================================");
+    console.log(input);
+    console.log("====================================");
   };
 
   const searchUser = async (username: string) => {
     const request = await axios.get(`https://api.github.com/users/${username}`);
     const response = (await request.status) === 200 ? request.data : null;
     setCurrent(response);
+    setLoading(true);
+    setInput("");
   };
 
   return (
@@ -33,6 +40,7 @@ export const App: React.FC = () => {
             path="/"
             element={
               <Search
+                loading={loading}
                 current={current}
                 setInput={setInput}
                 handleSubmit={handleSubmit}
@@ -42,7 +50,13 @@ export const App: React.FC = () => {
           />
           <Route
             path="/history"
-            element={<History history={history} setInput={setInput} />}
+            element={
+              <History
+                history={history}
+                setInput={setInput}
+                handleSubmit={handleSubmit}
+              />
+            }
           />
         </Routes>
       </BrowserRouter>
