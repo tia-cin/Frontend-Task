@@ -1,10 +1,12 @@
 section {
+    margin: 1em;
     display: grid;
     grid-template-columns: .3fr .7fr;
     grid-template-rows: .2fr .8fr;
     grid-template-areas: 
     "user-avatar user-info"
     "user-repos user-repos";
+    gap: 1em;
 }
 
 .user-info {
@@ -61,4 +63,25 @@ section {
 
 .user-repos div h5 {
     font-size: 1em;
+}
+
+@media only screen and (max-width: 600px) {
+    section {
+        grid-template-columns: .2fr .8fr;
+        grid-template-rows: .1fr .9fr;
+    }
+    .user-info h2  {
+        margin-left: .5em;
+        font-size: large;
+    }
+    .user-avatar img {
+        width: 5em;
+    }
+    .user-repos {
+        grid-template-columns: 1fr;
+        gap: 1em
+    }
+    .user-repos div {
+        padding: 1em;
+    }
 }

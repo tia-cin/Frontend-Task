@@ -1,0 +1,24 @@
+.history-container {
+    border: 1px solid var(--black);
+    border-radius: 2em;
+    padding: 1em;
+}
+.history-container > div {
+    display: grid;
+    grid-template-columns: repeat(1fr);
+}
+
+.history-container > div a {
+    border-bottom: 1px solid var(--black);
+}
+
+.history-container > div a:first-child {
+    border-top: 1px solid var(--black);
+}
+
+.history-container > div button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1em;
+}
