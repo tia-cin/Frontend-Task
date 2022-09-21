@@ -21,15 +21,15 @@ export const UserInfo: React.FC<UserInfoProps> = ({ user }) => {
 
   return (
     <section>
+      <div className="user-avatar">
+        <img src={user.avatar_url} alt={user.login} />
+      </div>
       <div className="user-info">
         <h2>
           {user.name}
           <small>{user.login}</small>
         </h2>
         <p>{user.bio}</p>
-      </div>
-      <div className="user-avatar">
-        <img src={user.avatar_url} alt={user.login} />
       </div>
       <div className="user-repos">
         {repos.length > 1 &&
